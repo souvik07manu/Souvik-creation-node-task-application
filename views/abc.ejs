@@ -1,0 +1,99 @@
+<%- include('partials/head'); -%>
+<%- include('partials/header'); -%>
+
+<div class="container-fluid">
+
+    
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills w-100">
+                <li class="nav-pill active">
+                    <a class="nav-link">Welcome <span style="color: green;
+                        font-weight: 600;"><%= username %></span></a>
+                </li>
+                <li class="nav-pill ml-auto">
+                    <a class="nav-link active" href="/showinsert">Add Task</a>
+                </li>
+            </ul>
+        </div>
+
+    <div class="card-body">
+
+        <% if(data.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Status</th>
+                    <th width="200px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i< data.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= (i+1) %></th>
+                    <td><%= data[i].task%></td>
+                    <td><%= data[i].status%></td>
+                    <td>
+                        <a class="btn btn-success edit" href="/task-edit/<%=data[i].id%>">Edit</a>
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            modal
+                          </button> -->
+                        <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="delete/<%=data[i].id%>">Delete</a>
+                    </td>
+                </tr>                                                                                     
+            <% } %>
+            </tbody>
+        </table>
+        <% } %>
+
+        <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <form action="#" method="post" enctype="multipart/form-data">
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Update Task</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+            
+                
+                <div class="form-group">
+
+                    <label>Task</label>
+                    <input value="<%=  %>" name="title" class="form-control" type="text" placeholder="Task.."> <br>
+
+                    <label>Status</label>
+                    <input value="<%= %>" name="title" class="form-control" type="text" placeholder="Status..">
+
+                </div> 
+
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-info" data-dismiss="modal">Update</button>
+            </div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+
+        <!-- if result is empty -->
+        <% if(!data.length) { %>
+            <p class="text-center">No book found!</p>
+        <% } %>
+
+        </div>
+    </div>
+
+</div>
+<%- include('partials/footer'); -%>
+</html>

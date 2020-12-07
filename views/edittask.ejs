@@ -1,0 +1,33 @@
+<%- include('partials/head'); -%>
+<%- include('partials/header'); -%>
+
+
+  <body class="container-fluid">
+
+    <form name="form1" method="POST" action="/updatetask">
+    <table>
+        <tr>
+        <td>ID</td>
+        <td><input type="text" class="form-control" name="id" readonly value="<%= id %>" ></td>
+        </tr>
+
+
+        <tr>
+          <td>Task</td>
+          <td><input type="text" class="form-control" name="task" value="<%= task %>" ></td>
+        </tr>
+
+        <tr>
+        <td>Status</td>
+        <td><input type="text" class="form-control" name="status" value="<%= status %>" ></td>
+        </tr>
+        <tr>
+        <td colspan="2"><input type="submit" class="btn btn-info" value="UPDATE" ></td>
+        </tr>
+    </table>
+    </form>   
+   
+</body>
+
+
+<%- include('partials/footer'); -%>

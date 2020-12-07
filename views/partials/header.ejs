@@ -1,0 +1,40 @@
+<style>
+.ser{
+  background-color: rgb(2, 95, 64);
+  color: white !important;
+}
+
+</style>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+  
+      <ul class="navbar-nav">
+        
+        <li class="<%= (currentMenu === 'abc' || currentMenu === 'edittask') ? 'ser' : '' %>">
+          <a class="nav-link" href="/data">All Task</a>
+        </li>
+        <li class="<%= currentMenu === 'showinsert' ? 'active' : '' %>">
+          <a class="nav-link" href="/showinsert">Insert Task</a>
+        </li>
+        <li class="<%= currentMenu === 'topic' ? 'active' : '' %>">
+          <a class="nav-link" href="/done">About</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li> -->
+      </ul>
+    
+  </div>
+  
+  
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+              </li>
+          </ul>
+   </div>
+    
+    </nav>
