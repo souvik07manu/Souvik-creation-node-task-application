@@ -81,7 +81,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `username`, `email`, `password`, `location`, `created_at`) VALUES
-(1, 'juniar333', 'souvik@gmail.com', '1234', 'shyamnagar,kowgachi', '2020-03-26 09:52:58');
+(1, 'juniar333', 'kio@gmail.com', '123467', 'westbengal', '2020-03-26 09:52:58');
 
 --
 -- Indexes for dumped tables
